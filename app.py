@@ -2,16 +2,25 @@ import streamlit as st
 import pandas as pd
 import pickle
 import requests
-import os
+import time
 from dotenv import load_dotenv
+import os
+import gdown
 
-# Load API key
-load_dotenv()
-API_KEY = os.getenv("TMDB_API_KEY")
+# ---------- DOWNLOAD FILE IF NOT EXISTS ----------
 
-# Load data
-movies = pd.DataFrame(pickle.load(open('movie_dict.pkl', 'rb')))
-similarity = pickle.load(open('similarity.pkl', 'rb'))
+SIMILARITY_PATH = "similarity.pkl"
+
+if not os.path.exists(SIMILARITY_PATH):
+    url = "https://drive.google.com/uc?id=12-YwOTrYd3IvwPC7A__6TnnYWSPG8DSQ"
+    gdown.download(url, SIMILARITY_PATH, quiet=False)
+
+# ---------- LOAD FILES ----------
+
+movie_dict = pickle.load(open('movie_dict.pkl','rb'))
+movies = pd.DataFrame(movie_dict)
+
+similarity = pickle.load(open(SIMILARITY_PATH,'rb'))
 
 st.title("🎬 Movie Recommender System")
 
