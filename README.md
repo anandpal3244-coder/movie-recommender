@@ -1,5 +1,5 @@
 # 🎬 Movie Recommender System
-assets/<img width="978" height="687" alt="Screenshot 2026-05-01 131304" src="https://github.com/user-attachments/assets/8e46c1b6-fe68-40f2-bc98-c0886b16978f" />
+assets/<img width="1369" height="1149" alt="ChatGPT Image May 1, 2026, 01_18_47 PM" src="https://github.com/user-attachments/assets/2b3e215a-f12e-4a19-ba14-a3c50d8d2f1d" />
 .png
 
 A content-based movie recommendation system built using Python, Machine Learning and Streamlit.
